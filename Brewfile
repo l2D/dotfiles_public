@@ -44,6 +44,7 @@ brew "helm" # Kubernetes package manager
 brew "infracost" # Cost estimates for Terraform
 brew "istioctl" # Istio configuration command-line utility
 brew "kompose" # Tool to move from `docker-compose` to Kubernetes
+brew "kubectx" # Tool that can switch between kubectl contexts easily and create aliases
 brew "kubie" # Much more powerful alternative to kubectx and kubens
 brew "kustomize" # Template-free customization of Kubernetes YAML manifests
 brew "terraform-docs" # Tool to generate documentation from Terraform modules
