@@ -270,7 +270,7 @@ fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Brew install from BrewFile
-sh "brew bundle install"
+sh "brew bundle"
 
 STRAP_SUCCESS="1"
 log "Your system is now Strap'd!"
