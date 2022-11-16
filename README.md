@@ -1,4 +1,4 @@
-# dotfiles_public
+# dotfiles_public (IN PROGRESS)
 
 Setup new Mac machine.
 
