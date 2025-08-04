@@ -75,36 +75,36 @@ brew "tz" # CLI time zone visualizer
 brew "yq" # Process YAML documents from the CLI
 
 ## Casks
-cask "1password"
-cask "1password-cli"
-cask "docker-desktop"
-cask "font-hack-nerd-font"
-cask "gitkraken"
-cask "gitkraken-cli"
-cask "lens"
-cask "microsoft-teams"
-cask "rancher"
-cask "raycast"
-cask "setapp"
-cask "signal"
-cask "slack"
-cask "visual-studio-code"
-cask "warp"
-cask "arc"
-cask "rectangle-pro"
-cask "betterdisplay"
-cask "wins"
-cask "adguard"
-cask "logi-options+"
-cask "aptakube"
-cask "orbstack"
-cask "postman"
-cask "postman-cli"
-cask "apidog-europe"
+cask "1password" # Password manager that keeps all passwords secure behind one password
+cask "1password-cli" # Command-line interface for 1Password
+cask "docker-desktop" # App to build and share containerized applications and microservices
+cask "font-hack-nerd-font" # Developer targeted font with icons
+cask "gitkraken" # Git client for Windows, Mac & Linux
+cask "gitkraken-cli" # GitKraken Command Line Interface
+cask "lens" # Kubernetes IDE
+cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
+cask "rancher" # Complete container management platform
+cask "raycast" # Control your tools with a few keystrokes
+cask "setapp" # Collection of apps for macOS and iOS
+cask "signal" # Private messaging app
+cask "slack" # Team communication and collaboration software
+cask "visual-studio-code" # Open-source code editor
+cask "warp" # Modern, Rust-based terminal with AI built in
+cask "arc" # Web browser
+cask "rectangle-pro" # Window snapping tool
+cask "betterdisplay" # Display management tool
+cask "wins" # Bring your windows to your cursor
+cask "adguard" # Ad blocker
+cask "logi-options+" # Software for Logitech devices
+cask "aptakube" # Modern Kubernetes GUI client
+cask "orbstack" # Replacement for Docker Desktop
+cask "postman" # Collaboration platform for API development
+cask "postman-cli" # Command-line companion for Postman
+cask "apidog-europe" # All-in-one API development and testing tool
 
 ## MAS
-mas "Amphetamine", id: 937984704
+mas "Amphetamine", id: 937984704 # Keep-awake utility
 
 ## Libs
-brew "libyaml"
-brew "openssl@3"
+brew "libyaml" # YAML C library
+brew "openssl@3" # Cryptography and SSL/TLS Toolkit
