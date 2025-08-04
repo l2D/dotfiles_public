@@ -24,6 +24,31 @@ fi
 # Change to the installation directory
 cd "$INSTALL_DIR"
 
+# Install macOS prerequisites
+if [[ "$(uname)" == "Darwin" ]]; then
+  echo "Running on macOS. Installing prerequisites..."
+
+  # Install Xcode Command Line Tools
+  if ! xcode-select -p &>/dev/null; then
+    echo "Xcode Command Line Tools not found. Installing..."
+    xcode-select --install
+    echo "Please follow the on-screen instructions to install Xcode Command Line Tools, then re-run this script."
+    exit 0
+  else
+    echo "Xcode Command Line Tools are already installed."
+  fi
+
+  # Install Rosetta 2 on Apple Silicon Macs
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    if ! /usr/bin/pgrep -q oahd; then
+      echo "Rosetta 2 not found. Installing..."
+      sudo softwareupdate --install-rosetta --agree-to-license
+    else
+      echo "Rosetta 2 is already installed."
+    fi
+  fi
+fi
+
 # Install Homebrew if it's not installed
 if ! command -v brew &> /dev/null; then
   echo "Installing Homebrew..."
