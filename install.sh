@@ -59,7 +59,7 @@ fi
 
 # Place files at Home directory
 echo "Placing files at Home directory..."
-cp -f Brewfile ~/Brewfile
+cp -f Brewfile ~/.Brewfile
 cp -f vim/.vimrc ~/.vimrc
 cp -f p10k/.p10k.zsh ~/.p10k.zsh
 cp -f .zshrc ~/.zshrc
