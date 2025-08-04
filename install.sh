@@ -38,6 +38,7 @@ cp -f Brewfile ~/Brewfile
 cp -f vim/.vimrc ~/.vimrc
 cp -f p10k/.p10k.zsh ~/.p10k.zsh
 cp -f .zshrc ~/.zshrc
+cp -f .zprofile ~/.zprofile
 # Copy contents of .config recursively
 if [ -d ".config" ]; then
     mkdir -p ~/.config
