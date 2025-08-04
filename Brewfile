@@ -83,7 +83,6 @@ cask "gitkraken" # Git client for Windows, Mac & Linux
 cask "gitkraken-cli" # GitKraken Command Line Interface
 cask "lens" # Kubernetes IDE
 cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
-cask "rancher" # Complete container management platform
 cask "raycast" # Control your tools with a few keystrokes
 cask "setapp" # Collection of apps for macOS and iOS
 cask "signal" # Private messaging app
