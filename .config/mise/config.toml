@@ -1,0 +1,33 @@
+[tools]
+usage = "latest"
+node = '24'
+python = '3.13'
+go = '1.24'
+ruby = '3.4'
+rust = '1.88'
+# "asdf:mise-plugins/mise-azure-cli" = "latest"
+# "ubi:Azure/azure-cli" = "latest"
+# "aqua:aws/aws-cli" = "latest"
+"aqua:dotenv-linter/dotenv-linter" = "latest"
+# "aqua:sharkdp/bat" = "latest"
+"aqua:astral-sh/uv" = "latest"
+"asdf:mise-plugins/mise-pipx" = "latest"
+"aqua:google/yamlfmt" = "latest"
+"aqua:rhysd/actionlint" = "latest"
+"pipx:yamllint" = "latest"
+"aqua:pre-commit/pre-commit" = "latest"
+"aqua:pnpm/pnpm" = "latest"
+"npm:nx" = "latest"
+# "ubi:peteretelej/tree" = "latest"
+act = "latest"
+"aqua:guumaster/hostctl" = "latest"
+"aqua:astral-sh/ruff" = "latest"
+"gem:rubocop" = "latest"
+"gem:bundler" = "latest"
+
+[alias]
+kctx = 'kubectx'
+kns = 'kubens'
+
+[settings]
+experimental = true
