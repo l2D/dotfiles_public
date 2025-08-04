@@ -10,17 +10,21 @@ To set up a new device, run the following command in your terminal:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/l2D/dotfiles_public/main/install.sh)"
 ```
 
-This will clone the repository to `~/.dotfiles` and execute the setup script.
+This will clone the repository to a temporary directory and execute the setup script.
 
 ## 🧐 How It Works
 
-The installation script (`install.sh`) performs the following steps:
+The installation script (`install.sh`) is a self-contained installer that performs the following steps:
 
-1. **Clones the Repository**: It clones this repository to `~/.dotfiles` on your local machine. If the directory already exists, it will pull the latest changes.
-2. **Executes the Setup Script**: It runs the `setup_my_new_device.sh` script, which:
-    * Installs [Homebrew](https://brew.sh/) if it's not already installed.
-    * Installs all the packages, casks, and applications listed in the `Brewfile` using `brew bundle --global`.
-    * Copies the configuration files (`.vimrc`, `.p10k.zsh`, `.zshrc`, etc.) to your home directory.
+1. **Clones the Repository**: It clones this repository to a temporary `~/.dotfiles` directory on your local machine.
+2. **Installs macOS Prerequisites**:
+   * **Xcode Command Line Tools**: Prompts for installation if not already present.
+   * **Rosetta 2**: Installs it on Apple Silicon Macs if needed.
+3. **Installs Homebrew**: If not already installed, it will install Homebrew.
+4. **Copies Dotfiles**: It copies all the necessary configuration files (`.vimrc`, `.p10k.zsh`, `.zshrc`, `.zprofile`, `Brewfile`, and `.config` files) to your home directory.
+5. **Configures Homebrew**: It adds the Homebrew environment to your shell's `.zprofile`.
+6. **Installs Packages**: It installs all the packages, casks, and applications listed in the `Brewfile` using `brew bundle --global`.
+7. **Cleans Up**: It removes the temporary `~/.dotfiles` directory after the installation is complete.
 
 ## 📦 What's Included?
 
