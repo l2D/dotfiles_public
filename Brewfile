@@ -75,25 +75,25 @@ brew "tz" # CLI time zone visualizer
 brew "yq" # Process YAML documents from the CLI
 
 ## Casks
-cask "1password" # Password manager that keeps all passwords secure behind one password
+# cask "1password" # Password manager that keeps all passwords secure behind one password
 cask "1password-cli" # Command-line interface for 1Password
 cask "docker-desktop" # App to build and share containerized applications and microservices
 cask "font-hack-nerd-font" # Developer targeted font with icons
 cask "gitkraken" # Git client for Windows, Mac & Linux
 cask "gitkraken-cli" # GitKraken Command Line Interface
-cask "lens" # Kubernetes IDE
-cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
+# cask "lens" # Kubernetes IDE
+# cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
 cask "raycast" # Control your tools with a few keystrokes
 cask "setapp" # Collection of apps for macOS and iOS
-cask "signal" # Private messaging app
-cask "slack" # Team communication and collaboration software
-cask "visual-studio-code" # Open-source code editor
+# cask "signal" # Private messaging app
+# cask "slack" # Team communication and collaboration software
+# cask "visual-studio-code" # Open-source code editor
 cask "warp" # Modern, Rust-based terminal with AI built in
 cask "arc" # Web browser
 cask "rectangle-pro" # Window snapping tool
 cask "betterdisplay" # Display management tool
 cask "wins" # Bring your windows to your cursor
-cask "adguard" # Ad blocker
+# cask "adguard" # Ad blocker
 cask "logi-options+" # Software for Logitech devices
 cask "aptakube" # Modern Kubernetes GUI client
 cask "orbstack" # Replacement for Docker Desktop
