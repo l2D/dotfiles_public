@@ -89,6 +89,7 @@ Here's a list of the tools and applications that will be installed, categorized 
 
 * **[asciinema](https://asciinema.org/)**: Record and share terminal sessions
 * **[bat](https://github.com/sharkdp/bat)**: Clone of cat(1) with syntax highlighting and Git integration
+* **[dockutil](https://github.com/kcrawford/dockutil)**: Tool for managing macOS Dock items
 * **[exa](https://the.exa.website/)**: Modern replacement for 'ls'
 * **[fd](https://github.com/sharkdp/fd)**: Simple, fast and user-friendly alternative to 'find'
 * **[fzf](https://github.com/junegunn/fzf)**: Command-line fuzzy finder
@@ -140,6 +141,32 @@ Here's a list of the tools and applications that will be installed, categorized 
 
 * **[libyaml](https://pyyaml.org/wiki/LibYAML)**: YAML C library
 * **[openssl@3](https://www.openssl.org/)**: Cryptography and SSL/TLS Toolkit
+
+## 🔧 Helper Scripts
+
+### Dock Configuration
+
+The `scripts/configure-dock.sh` script automates the configuration of your macOS Dock by removing unwanted apps and adding/ordering your preferred applications.
+
+**Usage:**
+
+```bash
+# Preview changes without applying them
+./scripts/configure-dock.sh --dry-run
+
+# Apply dock configuration
+./scripts/configure-dock.sh
+```
+
+**Prerequisites:**
+
+* `dockutil` (automatically installed via Brewfile)
+
+**What it does:**
+
+* Removes default macOS apps you don't use (Safari, Mail, Maps, etc.)
+* Adds and orders your preferred applications (Arc, Warp, Cursor, etc.)
+* Restarts the Dock to apply changes
 
 ## 📜 License
 
