@@ -13,9 +13,15 @@
 # Requirements:
 #   - macOS
 #   - dockutil (install via: brew install dockutil)
+#
+# Compatibility:
+#   Supports macOS versions with different app names:
+#   - macOS 26+: "Apps" (was "Launchpad"), "Games" (was "Game Center")
+#   - macOS 15 and earlier: "Launchpad", "Game Center"
 # ==============================================================================
 
-set -e
+# set -e disabled to allow script to continue when apps are not found
+# We handle errors explicitly in add_app function
 
 # Colors for output
 RED='\033[0;31m'
@@ -51,9 +57,35 @@ log_error() {
     echo -e "${RED}✗${NC} $1"
 }
 
+get_macos_version() {
+    local version=$(sw_vers -productVersion 2>/dev/null || echo "0")
+    echo "${version%%.*}"  # Extract major version
+}
+
+get_app_name() {
+    local app="$1"
+    local macos_version="$2"
+    
+    # macOS 26+ renamed these apps
+    if [[ "$macos_version" -ge 26 ]]; then
+        case "$app" in
+            "Launchpad")
+                echo "Apps"
+                ;;
+            "Game Center")
+                echo "Games"
+                ;;
+            *)
+                echo "$app"
+                ;;
+        esac
+    else
+        echo "$app"
+    fi
+}
+
 check_prerequisites() {
     log_info "Checking prerequisites..."
-    
     if ! command -v dockutil &> /dev/null; then
         log_error "dockutil is not installed"
         echo ""
@@ -168,8 +200,10 @@ apps_to_remove=(
     "Keynote"
     "Numbers"
     "Pages"
-    "Launchpad"
-    "Game Center"
+    "Launchpad"        # macOS 15 and earlier
+    "Apps"             # macOS 26+ (renamed from Launchpad)
+    "Game Center"      # macOS 15 and earlier
+    "Games"            # macOS 26+ (renamed from Game Center)
     "App Store"
     "iPhone Mirroring"
 )
@@ -186,11 +220,14 @@ echo ""
 log_info "Adding and ordering apps in Dock..."
 echo ""
 
+# Detect macOS version for app name compatibility
+MACOS_VERSION=$(get_macos_version)
+
 # Define apps in desired order
 # Position starts at 1
 declare -a dock_apps=(
     "Finder"
-    "Launchpad"
+    "$(get_app_name "Launchpad" "$MACOS_VERSION")"
     "System Settings"
     "Arc"
     "Warp"
@@ -212,8 +249,10 @@ for app in "${dock_apps[@]}"; do
         continue
     fi
     
-    add_app "$app" "$position"
-    ((position++))
+    # Only increment position if app was successfully added
+    if add_app "$app" "$position"; then
+        ((position++))
+    fi
 done
 
 echo ""
@@ -233,4 +272,3 @@ echo ""
 echo "======================================================================"
 echo "  Dock configuration complete!"
 echo "======================================================================"
-
