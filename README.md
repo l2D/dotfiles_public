@@ -180,6 +180,7 @@ This repository installs 100+ packages organized by category:
 
 ### 🧪 Testing & Performance
 
+- **[bats-core](https://github.com/bats-core/bats-core)**: Bash Automated Testing System
 - **[k6](https://k6.io/)**: Modern load testing tool
 
 ### 🌐 Networking & HTTP
