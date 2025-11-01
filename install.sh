@@ -75,9 +75,41 @@ echo "Done."
 echo "Installing packages from Brewfile..."
 brew bundle --global
 
-# Clean up the cloned repository
-echo "Cleaning up installation files..."
-rm -rf "$INSTALL_DIR"
+# Prompt user for Dock configuration
+echo ""
+echo "Would you like to configure your macOS Dock with preferred applications? (y/n)"
+read -r response
 
+# Convert response to lowercase for comparison
+response=$(echo "$response" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$response" == "y" || "$response" == "yes" ]]; then
+  echo "Configuring macOS Dock..."
+  if "$INSTALL_DIR/scripts/configure-dock.sh"; then
+    echo "✓ Dock configuration completed successfully"
+  else
+    echo "✗ Warning: Dock configuration failed, but installation will continue"
+  fi
+else
+  echo "Skipping Dock configuration"
+fi
+
+# Clean up the cloned repository
+echo ""
+echo "Would you like to delete the cloned repository at $INSTALL_DIR? (y/n)"
+read -r cleanup_response
+
+# Convert response to lowercase for comparison
+cleanup_response=$(echo "$cleanup_response" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$cleanup_response" == "y" || "$cleanup_response" == "yes" ]]; then
+  echo "Cleaning up installation files..."
+  rm -rf "$INSTALL_DIR"
+  echo "✓ Cleanup completed"
+else
+  echo "Keeping repository at: $INSTALL_DIR"
+fi
+
+echo ""
 echo "Installation complete!"
 echo "Your new shell configuration will be loaded in your next terminal session."
