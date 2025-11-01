@@ -1,14 +1,17 @@
 # Brewfile for setting up a new macOS device with essential tools and applications
 
 ## Taps
+tap "buildkite/buildkite"
 tap "hashicorp/tap"
+tap "infisical/get-cli"
+tap "oven-sh/bun"
 
 ## Cloud Providers CLI
 brew "aws-sso-cli" # Securely manage AWS API credentials using AWS SSO
 brew "aws-vault" # Secure, cross-platform tool for managing AWS credentials
 brew "awscli" # Official Amazon AWS command-line interface
 brew "azure-cli" # Command-line tools for Azure
-brew "gcloud-cli" # Google Cloud SDK command-line interface
+cask "gcloud-cli" # Google Cloud SDK command-line interface
 
 ## Container & Kubernetes
 brew "helm" # The Kubernetes package manager
@@ -73,7 +76,7 @@ brew "bats-core" # Bash Automated Testing System
 brew "k6" # Modern load testing tool, using Go and JavaScript
 
 ## Networking & HTTP
-brew "dog" # Command-line DNS client
+brew "doggo" # Command-line DNS client
 brew "httpie" # User-friendly cURL replacement
 brew "wget" # Internet file retriever
 
@@ -81,7 +84,7 @@ brew "wget" # Internet file retriever
 brew "asciinema" # Record and share terminal sessions
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
 brew "dockutil" # Tool for managing macOS Dock items
-brew "exa" # Modern replacement for 'ls'
+brew "eza" # Modern replacement for 'ls'
 brew "fd" # Simple, fast and user-friendly alternative to 'find'
 brew "fzf" # Command-line fuzzy finder
 brew "htop" # Improved top (interactive process viewer)
