@@ -1,4 +1,4 @@
-.PHONY: help install dock-preview dock-apply test-brewfile test-zsh clean
+.PHONY: help install dock-preview dock-apply test-brewfile test-zsh test test-unit clean
 
 # Default target
 help:
@@ -6,6 +6,8 @@ help:
 	@echo "  make install        - Run the full dotfiles installation"
 	@echo "  make dock-preview   - Preview Dock configuration changes (dry-run)"
 	@echo "  make dock-apply     - Apply Dock configuration"
+	@echo "  make test           - Run all tests"
+	@echo "  make test-unit      - Run unit tests for install.sh"
 	@echo "  make test-brewfile  - Validate Brewfile syntax"
 	@echo "  make test-zsh       - Syntax check zsh configuration"
 	@echo "  make clean          - Remove temporary installation directory"
@@ -42,6 +44,20 @@ test-zsh:
 		zsh -n ~/.zshrc && echo "✓ .zshrc syntax is valid"; \
 	else \
 		echo "Error: ~/.zshrc not found. Run 'make install' first."; \
+		exit 1; \
+	fi
+
+# Run all tests
+test: test-unit
+	@echo "✓ All tests passed"
+
+# Run unit tests for install.sh
+test-unit:
+	@echo "Running unit tests..."
+	@if command -v bats >/dev/null 2>&1; then \
+		bats tests/install.bats; \
+	else \
+		echo "Error: bats not found. Install with 'brew install bats-core'"; \
 		exit 1; \
 	fi
 

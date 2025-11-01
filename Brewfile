@@ -69,6 +69,7 @@ brew "neovim" # Ambitious Vim-fork focused on extensibility and usability
 brew "watchman" # Watch files and take action when they change
 
 ## Testing & Performance
+brew "bats-core" # Bash Automated Testing System
 brew "k6" # Modern load testing tool, using Go and JavaScript
 
 ## Networking & HTTP
