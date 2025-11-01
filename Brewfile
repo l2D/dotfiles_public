@@ -127,6 +127,7 @@ cask "wins" # Bring your windows to your cursor
 ## GUI Applications - Development
 cask "apidog-europe" # All-in-one API development and testing tool
 cask "aptakube" # Modern Kubernetes GUI client
+cask "cursor" # AI-powered coding assistant
 cask "docker-desktop" # App to build and share containerized applications and microservices
 cask "gitkraken" # Git client for Windows, Mac & Linux
 cask "gitkraken-cli" # GitKraken Command Line Interface
