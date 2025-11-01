@@ -115,6 +115,7 @@ cask "1password" # Password manager that keeps all passwords secure behind one p
 cask "1password-cli" # Command-line interface for 1Password
 cask "adguard" # Ad blocker
 cask "betterdisplay" # Display management tool
+cask "krisp" # Noise cancelling application
 cask "logi-options+" # Software for Logitech devices
 cask "microsoft-teams" # Meet, chat, call, and collaborate in just one place
 cask "raycast" # Control your tools with a few keystrokes
