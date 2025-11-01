@@ -1,4 +1,4 @@
-.PHONY: help install dock-preview dock-apply test-brewfile test-zsh test test-unit clean
+.PHONY: help install dock-preview dock-apply dock-restore test-brewfile test-zsh test test-unit clean
 
 # Default target
 help:
@@ -6,6 +6,7 @@ help:
 	@echo "  make install        - Run the full dotfiles installation"
 	@echo "  make dock-preview   - Preview Dock configuration changes (dry-run)"
 	@echo "  make dock-apply     - Apply Dock configuration"
+	@echo "  make dock-restore   - Restore Dock to macOS defaults"
 	@echo "  make test           - Run all tests"
 	@echo "  make test-unit      - Run unit tests for install.sh"
 	@echo "  make test-brewfile  - Validate Brewfile syntax"
@@ -26,6 +27,11 @@ dock-preview:
 dock-apply:
 	@echo "Applying Dock configuration..."
 	@bash scripts/configure-dock.sh
+
+# Restore Dock to macOS defaults
+dock-restore:
+	@echo "Restoring Dock to macOS defaults..."
+	@bash scripts/restore-dock.sh
 
 # Validate Brewfile syntax
 test-brewfile:

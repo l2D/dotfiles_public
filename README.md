@@ -70,6 +70,7 @@ The repository includes a Makefile with convenient commands for common tasks:
 | `make install` | Run the full dotfiles installation |
 | `make dock-preview` | Preview Dock configuration changes (dry-run) |
 | `make dock-apply` | Apply Dock configuration |
+| `make dock-restore` | Restore Dock to macOS defaults |
 | `make test` | Run all tests |
 | `make test-unit` | Run unit tests for install.sh |
 | `make test-brewfile` | Validate Brewfile syntax |
@@ -90,6 +91,9 @@ make dock-preview
 
 # Apply Dock configuration
 make dock-apply
+
+# Restore Dock to macOS defaults
+make dock-restore
 
 # Run all tests
 make test
