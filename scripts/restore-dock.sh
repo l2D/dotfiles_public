@@ -17,7 +17,7 @@
 # Compatibility:
 #   Supports macOS versions with different app names:
 #   - macOS 26+: "Apps" (was "Launchpad"), "Games" (was "Game Center")
-#   - macOS 25 and earlier: "Launchpad", "Game Center"
+#   - macOS 15 and earlier: "Launchpad", "Game Center"
 # ==============================================================================
 
 # Colors for output
