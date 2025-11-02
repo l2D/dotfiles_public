@@ -92,6 +92,7 @@ brew "jd" # JSON diff and patch utility
 brew "jq" # Lightweight and flexible command-line JSON processor
 brew "mas" # Mac App Store command-line interface
 brew "navi" # Interactive cheatsheet tool for the command-line
+brew "powerlevel10k" # Powerlevel10k is a theme for Zsh
 brew "ripgrep" # Search tool like grep and The Silver Searcher
 brew "tldr" # Simplified and community-driven man pages
 brew "tokei" # Program that allows you to count code, quickly
